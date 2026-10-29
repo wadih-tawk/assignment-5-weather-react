@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Thunderstorm</title>
+  <g fill="#8796ab">
+    <circle cx="21" cy="32" r="10"/>
+    <circle cx="32" cy="24" r="13"/>
+    <circle cx="44" cy="32" r="10"/>
+    <rect x="21" y="32" width="23" height="10"/>
+  </g>
+  <polygon points="38,36 24,54 32,54 27,63 44,45 35,45 40,36" fill="#facc15"/>
+</svg>

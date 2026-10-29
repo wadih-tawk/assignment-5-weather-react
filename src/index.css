@@ -1,0 +1,450 @@
+:root {
+  --surface: hsl(220, 35%, 9%);
+  --card: hsl(220, 28%, 14%);
+  --tile: hsl(220, 24%, 19%);
+  --text: hsl(215, 30%, 93%);
+  --muted: hsl(215, 15%, 68%);
+  --brand: hsl(200, 90%, 64%);
+  --danger: hsl(4, 90%, 70%);
+  --day: hsl(205, 58%, 21%);
+  --night: hsl(240, 40%, 20%);
+
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 1rem;
+  --sp-4: 1.5rem;
+  --sp-5: 2rem;
+  --sp-6: 3rem;
+
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+dl {
+  margin: 0;
+}
+
+dd {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+
+button {
+  font: inherit;
+}
+
+input {
+  font: inherit;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--sp-5) var(--sp-3);
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.subtitle {
+  color: var(--muted);
+}
+
+.card {
+  padding: var(--sp-3);
+  background: var(--card);
+  border-radius: var(--radius);
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.search label {
+  font-weight: 700;
+}
+
+.search-row {
+  display: flex;
+  gap: var(--sp-2);
+}
+
+.search-row input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.search-row input::placeholder {
+  color: var(--muted);
+}
+
+.search-row .invalid {
+  border-color: var(--danger);
+}
+
+.field-error {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.button {
+  padding: var(--sp-2) var(--sp-4);
+  border: 2px solid var(--brand);
+  border-radius: var(--radius);
+  background: var(--brand);
+  color: var(--surface);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out;
+}
+
+.button:hover {
+  border-color: var(--text);
+  background: var(--text);
+}
+
+.button:disabled {
+  border-color: var(--brand);
+  background: var(--brand);
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--brand);
+}
+
+.button-outline:hover {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: var(--surface);
+}
+
+.status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  color: var(--muted);
+}
+
+.status-message {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.status-loading {
+  color: var(--text);
+}
+
+.status-error {
+  border-color: var(--danger);
+  background: var(--card);
+  color: var(--danger);
+}
+
+.spinner {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid var(--tile);
+  border-top-color: var(--brand);
+  border-radius: 50%;
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.weather {
+  display: grid;
+  gap: var(--sp-4);
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  background: var(--day);
+}
+
+.night {
+  background: var(--night);
+}
+
+.current h2 {
+  overflow-wrap: anywhere;
+}
+
+.place-region {
+  color: var(--muted);
+}
+
+.current-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.current-icon {
+  width: 5rem;
+  height: 5rem;
+}
+
+.current-temp {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.current-condition {
+  font-size: 1.125rem;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-3);
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--sp-1);
+  padding: var(--sp-3);
+  background: var(--card);
+  border-radius: var(--radius);
+}
+
+.detail dt {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.detail dd {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.forecast-list {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.forecast-day {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--tile);
+  border-radius: var(--radius);
+}
+
+.forecast-name {
+  flex: 1 1 0;
+}
+
+.forecast-temps {
+  flex: 1 1 0;
+}
+
+.forecast-name {
+  font-weight: 700;
+}
+
+.forecast-icon {
+  flex: none;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.forecast-temps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0 var(--sp-2);
+}
+
+.temp-min {
+  color: var(--muted);
+}
+
+a {
+  color: var(--brand);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.footer {
+  padding: 0 var(--sp-3) var(--sp-5);
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+
+  .app {
+    gap: var(--sp-5);
+    padding-top: var(--sp-6);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .card {
+    padding: var(--sp-4);
+  }
+
+  .status {
+    padding: var(--sp-3) var(--sp-4);
+  }
+
+  .current-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .current-temp {
+    font-size: 4.5rem;
+  }
+
+  .details {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .detail dd {
+    font-size: 1.25rem;
+  }
+
+  .forecast-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-3);
+  }
+
+  .forecast-day {
+    flex-direction: column;
+    padding: var(--sp-4) var(--sp-3);
+  }
+
+  .forecast-name {
+    flex: none;
+  }
+
+  .forecast-temps {
+    flex: none;
+  }
+
+  .forecast-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .weather {
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas:
+      "current details"
+      "forecast forecast";
+  }
+
+  .current {
+    grid-area: current;
+  }
+
+  .details {
+    grid-area: details;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .forecast {
+    grid-area: forecast;
+  }
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Rain</title>
+  <g fill="#e2e8f0">
+    <circle cx="21" cy="32" r="10"/>
+    <circle cx="32" cy="24" r="13"/>
+    <circle cx="44" cy="32" r="10"/>
+    <rect x="21" y="32" width="23" height="10"/>
+  </g>
+  <g stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round">
+    <line x1="23" y1="46" x2="19" y2="58"/>
+    <line x1="34" y1="46" x2="30" y2="58"/>
+    <line x1="45" y1="46" x2="41" y2="58"/>
+  </g>
+</svg>
